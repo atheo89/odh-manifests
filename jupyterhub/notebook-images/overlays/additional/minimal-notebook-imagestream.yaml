@@ -24,3 +24,14 @@ spec:
     name: "py3.8-v1"
     referencePolicy:
       type: Local
+  - annotations:
+      opendatahub.io/notebook-software: '[{"name":"Python","version":"v3.8"}]'
+      opendatahub.io/notebook-python-dependencies: '[{"name":"JupyterLab","version": "3.2"}, {"name": "Notebook","version": "6.4"}]'
+      openshift.io/imported-from: quay.io/modh/odh-minimal-notebook-container
+      opendatahub.io/default-image: "true"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/odh-minimal-notebook-container@sha256:7b3ce5b33244ccd664afda023a12f7fc90f16d619f4ebc43ddf01a97edce5c30
+    name: "py3.9-v2"
+    referencePolicy:
+      type: Local
