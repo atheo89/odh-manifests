@@ -9,6 +9,9 @@ resources:
 - pytorch-notebook-imagestream.yaml
 - tensorflow-notebook-imagestream.yaml
 - trustyai-notebook-imagestream.yaml
+- codeserver-notebook-imagestream.yaml
+- rstudio-notebook-imagestream.yaml
+- rstudio-gpu-notebook-imagestream.yaml
 
 commonLabels:
   opendatahub.io/component: "true"
@@ -97,5 +100,26 @@ vars:
       apiVersion: v1
     fieldref:
       fieldpath: data.odh-trustyai-notebook-image-n
+  - name: odh-codeserver-notebook-image
+    objref:
+      kind: ConfigMap
+      name: notebooks-parameters
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.odh-codeserver-notebook-image
+  - name: odh-rstudio-notebook-image
+    objref:
+      kind: ConfigMap
+      name: notebooks-parameters
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.odh-rstudio-notebook-image
+  - name: odh-rstudio-gpu-notebook-image
+    objref:
+      kind: ConfigMap
+      name: notebooks-parameters
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.odh-rstudio-gpu-notebook-image
 configurations:
   - params.yaml
